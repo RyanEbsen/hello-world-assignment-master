@@ -1,8 +1,10 @@
 package com.ualr.firstapp;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ualr.firstapp.databinding.ActivityMainBinding;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // TODO 06. Avoid updating the text label (userMsgTV) when the text field (userInputET) is empty
+    @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
     public void showTextMessage(View view) {
         if(!mBinding.userInputET.getText().toString().isEmpty()) {
             mBinding.userMsgTV.setText(mBinding.userInputET.getText().toString());
